@@ -6,11 +6,11 @@
  * Generated linker script file for MKL25Z128xxx4
  * Created from linkscript.ldt by FMCreateLinkLibraries
  * Using Freemarker v2.3.23
- * MCUXpresso IDE v11.0.1 [Build 2563] [2019-09-01] on Oct 31, 2019 3:25:22 PM
+ * MCUXpresso IDE v11.0.0 [Build 2516] [2019-06-05] on Nov 2, 2019 3:41:29 PM
  */
 
-INCLUDE "MKL25Z128xxx4_Project_PES_Project_I2C_Debug_library.ld"
-INCLUDE "MKL25Z128xxx4_Project_PES_Project_I2C_Debug_memory.ld"
+INCLUDE "PES_I2C_Debug_library.ld"
+INCLUDE "PES_I2C_Debug_memory.ld"
 
 ENTRY(ResetISR)
 
@@ -101,9 +101,6 @@ SECTIONS
        _data = . ;
        *(vtable)
        *(.ramfunc*)
-       KEEP(*(CodeQuickAccess))
-       KEEP(*(DataQuickAccess))
-       *(RamFunction)
        *(.data*)
        . = ALIGN(4) ;
        _edata = . ;

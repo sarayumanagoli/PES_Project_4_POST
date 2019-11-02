@@ -1,6 +1,4 @@
-source/MKL25Z128xxx4_Project_PES_Project_I2C.o \
- source/MKL25Z128xxx4_Project_PES_Project_I2C.d: \
- ../source/MKL25Z128xxx4_Project_PES_Project_I2C.c ../board/board.h \
+source/PES_I2C.o source/PES_I2C.d: ../source/PES_I2C.c ../board/board.h \
  ../board/clock_config.h ../drivers/fsl_common.h \
  ../CMSIS/fsl_device_registers.h ../CMSIS/MKL25Z4.h \
  ../CMSIS/core_cm0plus.h ../CMSIS/core_cmInstr.h ../CMSIS/cmsis_gcc.h \
@@ -8,7 +6,7 @@ source/MKL25Z128xxx4_Project_PES_Project_I2C.o \
  ../CMSIS/MKL25Z4_features.h ../drivers/fsl_clock.h \
  ../drivers/fsl_common.h ../drivers/fsl_gpio.h ../board/peripherals.h \
  ../board/pin_mux.h ../board/clock_config.h ../CMSIS/MKL25Z4.h \
- ../utilities/fsl_debug_console.h ../source/i2c.h
+ ../utilities/fsl_debug_console.h ../source/i2c.h ../source/tmp102.h
 
 ../board/board.h:
 
@@ -49,3 +47,5 @@ source/MKL25Z128xxx4_Project_PES_Project_I2C.o \
 ../utilities/fsl_debug_console.h:
 
 ../source/i2c.h:
+
+../source/tmp102.h:

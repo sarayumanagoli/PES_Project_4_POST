@@ -28,25 +28,25 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: MKL25Z128xxx4_Project_PES_Project_I2C.axf
+all: PES_I2C.axf
 
 # Tool invocations
-MKL25Z128xxx4_Project_PES_Project_I2C.axf: $(OBJS) $(USER_OBJS)
+PES_I2C.axf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU Linker'
-	arm-none-eabi-gcc -nostdlib -Xlinker -Map="MKL25Z128xxx4_Project_PES_Project_I2C.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m0plus -mthumb -T MKL25Z128xxx4_Project_PES_Project_I2C_Debug.ld -o "MKL25Z128xxx4_Project_PES_Project_I2C.axf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -nostdlib -Xlinker -Map="PES_I2C.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m0plus -mthumb -T PES_I2C_Debug.ld -o "PES_I2C.axf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build
 
 # Other Targets
 clean:
-	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) MKL25Z128xxx4_Project_PES_Project_I2C.axf
+	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) PES_I2C.axf
 	-@echo ' '
 
 post-build:
 	-@echo 'Performing post-build steps'
-	-arm-none-eabi-size "MKL25Z128xxx4_Project_PES_Project_I2C.axf"; # arm-none-eabi-objcopy -v -O binary "MKL25Z128xxx4_Project_PES_Project_I2C.axf" "MKL25Z128xxx4_Project_PES_Project_I2C.bin" ; # checksum -p MKL25Z128xxx4 -d "MKL25Z128xxx4_Project_PES_Project_I2C.bin";
+	-arm-none-eabi-size "PES_I2C.axf"; # arm-none-eabi-objcopy -v -O binary "PES_I2C.axf" "PES_I2C.bin" ; # checksum -p MKL25Z128xxx4 -d "PES_I2C.bin";
 	-@echo ' '
 
 .PHONY: all clean dependents post-build
